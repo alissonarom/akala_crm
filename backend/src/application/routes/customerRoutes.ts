@@ -6,6 +6,6 @@ const router = express.Router();
 router.get('/overview/metrics', getCustomerMetrics);
 router.get('/:id', getCustomerById);
 router.post('/:id/generate-insight', generateInsight);
-router.get('/api/customers', getCustomers);
+router.get('/customers', getCustomers);
 
 export default router;
