@@ -134,6 +134,7 @@ const Customers: React.FC = () => {
         <DataGrid
           rows={customers}
           columns={columns}
+          getRowId={(row) => row._id}
           initialState={{
             pagination: {
               paginationModel: { page: 0, pageSize: 10 },
