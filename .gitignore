@@ -1,0 +1,19 @@
+# Conteúdo do arquivo .gitignore (na pasta raiz)
+
+# 1. Pastas de Dependências
+# Ignora node_modules em qualquer subpasta (backend/ e frontend/)
+node_modules/
+
+# 2. Arquivos de Ambiente (Crucial para Segurança)
+.env
+.env.*
+!.env.example # Permite enviar o arquivo de exemplo sem segredos
+
+# 3. Artefatos de Build (Arquivos gerados pelo React/Webpack, etc.)
+# Se o backend gerar builds:
+backend/dist/
+# O React gera a pasta 'build'
+frontend/build/
+
+# 4. Outros Arquivos de Sistema
+.DS_Store
