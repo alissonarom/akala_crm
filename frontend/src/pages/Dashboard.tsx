@@ -2,6 +2,8 @@ import React, { useMemo } from 'react';
 import { Box, Paper, Typography, Chip, CircularProgress, Divider } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useCustomers } from '../components/CustomerContext';
+import { processChartData } from '../utils/processChartData';
+import { CustomerTrendChart } from '../components/CustomerTrendChart';
 
 const MetricCard = ({ title, value, subtitle, delay }: any) => (
     <Paper
@@ -25,6 +27,10 @@ const MetricCard = ({ title, value, subtitle, delay }: any) => (
 
 const Dashboard: React.FC = () => {
     const { customers, loading } = useCustomers();
+
+    const chartData = React.useMemo(() => {
+        return processChartData(customers);
+    }, [customers]);
 
     // Lógica de cálculo de métricas
     const stats = useMemo(() => {
@@ -100,12 +106,14 @@ const Dashboard: React.FC = () => {
                         <Box sx={{ width: { xs: '100%', sm: '50%', md: '33.33%' }, px: 1.5, mb: 3 }}>
                             <MetricCard title="Faturamento Total" value={stats?.faturamento} subtitle="Acumulado" delay={0.3} />
                         </Box>
-
                         <Box sx={{ width: { xs: '100%', sm: '50%', md: '50%' }, px: 1.5, mb: 3 }}>
                             <MetricCard title="Lead Score Médio" value={stats?.avgScore} subtitle="Nível de engajamento" delay={0.4} />
                         </Box>
                         <Box sx={{ width: { xs: '100%', sm: '50%', md: '50%' }, px: 1.5, mb: 3 }}>
                             <MetricCard title="Ticket Médio" value={stats?.avgTicket} subtitle="Geral por cliente" delay={0.5} />
+                        </Box>
+                        <Box sx={{ mt: 3 }}>
+                            <CustomerTrendChart data={chartData} />
                         </Box>
                     </Box>
                 </Box>
