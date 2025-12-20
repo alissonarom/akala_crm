@@ -17,6 +17,7 @@ interface Customer {
   status: boolean;
   tags: string[];
   total_orders: number;
+  total_visits: number;
   average_ticket: number;
   last_order_date: { $date: string };
   evaluation: CustomerEvaluation;
@@ -81,6 +82,7 @@ const Customers: React.FC = () => {
     { field: 'email', headerName: 'Email', width: 200 },
     { field: 'whatsapp', headerName: 'WhatsApp', width: 150 },
     { field: 'total_orders', headerName: 'Pedidos', type: 'number', width: 100 },
+    { field: 'total_visits', headerName: 'Visitas', type: 'number', width: 100 },
     {
       field: 'average_ticket',
       headerName: 'Ticket Médio',
