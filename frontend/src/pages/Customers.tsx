@@ -72,7 +72,6 @@ const Customers: React.FC = () => {
       setIsLoading(false); // Finaliza o loading
     }
   }, []); // Sem dependências, executa apenas no mount
-
   useEffect(() => {
     fetchCustomers();
   }, [fetchCustomers]);

@@ -22,11 +22,6 @@ const CustomerPopup: React.FC<CustomerPopupProps> = ({ open, onClose, customer }
     const handleGenerateInsight = async () => {
         setLoadingInsight(true);
         try {
-            // Replace with actual API call
-            // const response = await axios.post(`http://localhost:3000/api/customers/${customer._id}/generate-insight`);
-            // setInsight(response.data);
-
-            // Mock for now
             setTimeout(() => {
                 setInsight({
                     behavior_summary: "Cliente fiel com preferência por pratos veganos. Costuma pedir nos fins de semana.",
@@ -79,8 +74,8 @@ const CustomerPopup: React.FC<CustomerPopupProps> = ({ open, onClose, customer }
                                 <Typography variant="h6">{customer.total_orders}</Typography>
                             </Box>
                             <Box>
-                                <Typography variant="caption" color="text.secondary">Ticket Médio</Typography>
-                                <Typography variant="h6">R$ {customer.average_ticket.toFixed(2)}</Typography>
+                                <Typography variant="caption" color="text.secondary">Total Visitas</Typography>
+                                <Typography variant="h6">{customer.total_visits}</Typography>
                             </Box>
                             <Box>
                                 <Typography variant="caption" color="text.secondary">Cliente Desde</Typography>
