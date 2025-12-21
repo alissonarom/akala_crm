@@ -47,14 +47,14 @@ const Dashboard: React.FC = () => {
         const parseMongoDate = (d: any) => d?.$date ? new Date(d.$date) : new Date(d);
 
         customers.forEach(c => {
-            const createdAt = parseMongoDate(c.created_at);
+            const createdAt = parseMongoDate(c.customer_since);
             const consumption = c.consumption || 0;
 
             // Faturamento Total
             totalConsumption += consumption;
 
             // Novos Clientes (7 dias)
-            if (createdAt >= sevenDaysAgo) newCustomersCount++;
+            if (createdAt <= sevenDaysAgo) newCustomersCount++;
 
             // Soma de Lead Score para média
             totalScore += (c.lead_score || 0);
@@ -80,7 +80,7 @@ const Dashboard: React.FC = () => {
 
     if (loading) {
         return (
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', width: '100%' }}>
                 <CircularProgress />
             </Box>
         );
@@ -112,7 +112,7 @@ const Dashboard: React.FC = () => {
                         <Box sx={{ width: { xs: '100%', sm: '50%', md: '50%' }, px: 1.5, mb: 3 }}>
                             <MetricCard title="Ticket Médio" value={stats?.avgTicket} subtitle="Geral por cliente" delay={0.5} />
                         </Box>
-                        <Box sx={{ mt: 3 }}>
+                        <Box sx={{ width: { xs: '100%', sm: '100%', md: '100%' }, px: 1.5, mb: 3 }}>
                             <CustomerTrendChart data={chartData} />
                         </Box>
                     </Box>
