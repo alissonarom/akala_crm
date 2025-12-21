@@ -2,10 +2,11 @@ export const processChartData = (customers: any[]) => {
   const map = new Map();
 
   customers.forEach((c) => {
-    // Tratando o formato $date do MongoDB
-    const dateStr = c.created_at?.$date 
-      ? c.created_at.$date.split('T')[0] 
-      : new Date(c.created_at).toISOString().split('T')[0];
+    // Pegando a data de 'customer_since' em vez de 'created_at'
+    const rawDate = c.customer_since?.$date || c.customer_since;
+    if (!rawDate) return;
+
+    const dateStr = new Date(rawDate).toISOString().split('T')[0];
 
     if (!map.has(dateStr)) {
       map.set(dateStr, { date: dateStr, customersCount: 0, totalValue: 0 });
@@ -20,7 +21,7 @@ export const processChartData = (customers: any[]) => {
     .map(d => ({
       date: d.date,
       clientes: d.customersCount,
-      ticketMedio: d.customersCount > 0 ? d.totalValue / d.customersCount : 0
+      ticketMedio: d.customersCount > 0 ? Number((d.totalValue / d.customersCount).toFixed(2)) : 0
     }))
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 };
