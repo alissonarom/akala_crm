@@ -16,6 +16,7 @@ interface ListsProps {
 
 const Lists: React.FC<ListsProps> = () => {
     const { customers } = useCustomers();
+    console.log('customers in list', customers[0]);
     const segments = useMemo(() => {
         const now = new Date();
         const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
