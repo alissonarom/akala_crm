@@ -58,7 +58,7 @@ const CustomerPopup: React.FC<CustomerPopupProps> = ({ open, onClose, customer }
                             ))}
                         </Box>
                     </Box>
-                    <Box sx={{ ml: 'auto', textAlign: 'right' }}>
+                    <Box sx={{ ml: 'auto', textAlign: 'right', marginRight: '40px' }}>
                         <Typography variant="caption" color="text.secondary">Leadscore</Typography>
                         <Typography variant="h3" color="primary.main" fontWeight="bold">{customer.lead_score}</Typography>
                     </Box>
