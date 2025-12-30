@@ -4,6 +4,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import MenuIcon from '@mui/icons-material/Menu';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import akalaLogo from '../assets/sara.png';
@@ -21,7 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
         { text: 'Overview', icon: <DashboardIcon />, path: '/dashboard' },
         { text: 'Clientes', icon: <PeopleIcon />, path: '/customers' },
         { text: 'Listas', icon: <ListAltIcon />, path: '/lists' },
-        { text: 'Métricas', icon: <ListAltIcon />, path: '/campaignPerformance' },
+        { text: 'Métricas', icon: <AutoGraphIcon />, path: '/campaignPerformance' },
     ];
 
     return (

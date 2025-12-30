@@ -1,8 +1,8 @@
 export interface CampaignMetrics {
   enviado: number;
-  viewed: number;
+  visualizado: number;
   clicou: number;
-  converted: number;
+  convertido: number;
   revenue: number;
   cost: number;
 }
@@ -10,9 +10,9 @@ export interface CampaignMetrics {
 export interface CampaignPeriodMetrics {
   period: string; // ex: "2024-01"
   enviado: number;
-  viewed: number;
+  visualizado: number;
   clicou: number;
-  converted: number;
+  convertido: number;
 }
 
 export interface Campaign {

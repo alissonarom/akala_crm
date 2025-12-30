@@ -84,9 +84,9 @@ const CampaignPerformance: React.FC = () => {
         }}
       >
         <KpiCard title="Enviadas" value={metrics.enviado} subtitle="Mensagens disparadas" />
-        <KpiCard title="Visualização" value={`${rate(metrics.viewed, metrics.enviado)}%`} subtitle="Taxa de abertura" />
-        <KpiCard title="CTR" value={`${rate(metrics.clicou, metrics.viewed)}%`} subtitle="Cliques / visualizações" />
-        <KpiCard title="Conversão" value={`${rate(metrics.converted, metrics.clicou)}%`} subtitle="Pedidos gerados" />
+        <KpiCard title="Visualização" value={`${rate(metrics.visualizado, metrics.enviado)}%`} subtitle="Taxa de abertura" />
+        <KpiCard title="CTR" value={`${rate(metrics.clicou, metrics.visualizado)}%`} subtitle="Cliques / visualizações" />
+        <KpiCard title="Conversão" value={`${rate(metrics.convertido, metrics.clicou)}%`} subtitle="Pedidos gerados" />
         <KpiCard title="Receita" value={`R$ ${metrics.revenue.toLocaleString()}`} subtitle="Vendas atribuídas" />
         <KpiCard title="ROI" value={`${calculateROI(selectedCampaign)}x`} subtitle="Retorno da campanha" />
       </Box>
@@ -121,9 +121,9 @@ const CampaignPerformance: React.FC = () => {
                 <YAxis />
                 <ReTooltip />
                 <Area type="monotone" dataKey="enviado" stroke="#413ca4ff" fill="url(#colorenviado)" />
-                <Area type="monotone" dataKey="viewed" stroke="#266b40ff" fill="#82ca9eb9" />
+                <Area type="monotone" dataKey="visualizado" stroke="#266b40ff" fill="#82ca9eb9" />
                 <Area type="monotone" dataKey="clicou" stroke="#825c12ff" fill="#ffc758b0" />
-                <Area type="monotone" dataKey="converted" stroke="#cd0202ff" fill="#ff5252c0" />
+                <Area type="monotone" dataKey="convertido" stroke="#cd0202ff" fill="#ff5252c0" />
               </AreaChart>
             </ResponsiveContainer>
           </Paper>
