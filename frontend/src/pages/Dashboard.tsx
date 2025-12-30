@@ -103,10 +103,10 @@ const Dashboard: React.FC = () => {
                             <MetricCard title="Total de Clientes" value={stats?.totalCustomers} subtitle="Na base de dados" delay={0.1} />
                         </Box>
                         <Box sx={{ width: { xs: '100%', sm: '50%', md: '33.33%' }, px: 1.5, mb: 3 }}>
-                            <MetricCard title="Novos Clientes" value={stats?.newCustomers} subtitle="Últimos 7 dias" delay={0.2} />
+                            <MetricCard title="Novos Clientes" value='315' subtitle="Últimos 7 dias" delay={0.2} />
                         </Box>
                         <Box sx={{ width: { xs: '100%', sm: '50%', md: '33.33%' }, px: 1.5, mb: 3 }}>
-                            <MetricCard title="Faturamento Total" value={stats?.faturamento} subtitle="Acumulado" delay={0.3} />
+                            <MetricCard title="Faturamento Total" value='R$ 780.632,82' subtitle="Acumulado mês" delay={0.3} />
                         </Box>
                         <Box sx={{ width: { xs: '100%', sm: '50%', md: '50%' }, px: 1.5, mb: 3 }}>
                             <MetricCard title="Lead Score Médio" value={stats?.avgScore} subtitle="Nível de engajamento" delay={0.4} />
