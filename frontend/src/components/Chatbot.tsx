@@ -23,7 +23,17 @@ const Chatbot: React.FC = () => {
         setTimeout(() => {
             setMessages([...newMessages, {
                 role: 'model',
-                content: 'Entendi! Posso analisar seus dados de vendas ou sugerir ações para clientes inativos. O que prefere?'
+                content: `
+                    Alcance alto, conversão fraca
+
+                    Apesar do volume expressivo de visualizações, a campanha performou abaixo do padrão histórico, evidenciando falha clara na oferta ou no CTA.
+
+                    Próximos passos
+                    - Escalar apenas para Super Fans
+                    - Validar oferta direta com desconto fixo
+                    - Simplificar copy e usar CTA mais direto e urgente
+                    `
+
             }]);
         }, 1000);
     };
@@ -80,6 +90,7 @@ const Chatbot: React.FC = () => {
                                         maxWidth: '80%',
                                         borderBottomRightRadius: msg.role === 'user' ? 0 : 2,
                                         borderBottomLeftRadius: msg.role === 'model' ? 0 : 2,
+                                        whiteSpace: 'pre-line',
                                     }}
                                 >
                                     <Typography variant="body2">{msg.content}</Typography>

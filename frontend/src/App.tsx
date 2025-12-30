@@ -10,6 +10,9 @@ import Customers from './pages/Customers';
 
 import Lists from './pages/Lists';
 import { CustomerProvider } from './components/CustomerContext';
+import CampaignPerformance from './pages/CampaignPerformance';
+import { CampaignProvider } from './components/CampaignContext';
+
 
 // Simple auth guard
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
@@ -21,6 +24,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CustomerProvider>
+        <CampaignProvider>
         <Router>
           <Routes>
             <Route path="/login" element={<Login />} />
@@ -29,9 +33,11 @@ function App() {
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="customers" element={<Customers />} />
               <Route path="lists" element={<Lists customers={[]} />} />
+              <Route path="campaignPerformance" element={<CampaignPerformance />} />
             </Route>
           </Routes>
         </Router>
+      </CampaignProvider>
       </CustomerProvider>
       <CssBaseline />
     </ThemeProvider>

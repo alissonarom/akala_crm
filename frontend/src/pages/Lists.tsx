@@ -56,8 +56,8 @@ const Lists: React.FC<ListsProps> = () => {
 
         return [
             { id: '1', name: 'Top Spenders', desc: 'Ticket médio > R$ 100', count: topSpenders, tags: ['lucrativo'], icon: <TrendingUpIcon />, color: '#4caf50' },
-            { id: '2', name: 'Novos Clientes', desc: 'Últimos 7 dias', count: novosClientes, tags: ['recente'], icon: <GroupIcon />, color: '#03a9f4' },
-            { id: '3', name: 'Em Risco', desc: 'Inativos há +30 dias', count: emRisco, tags: ['churn'], icon: <WarningIcon />, color: '#ff9800' },
+            { id: '2', name: 'Novos Clientes', desc: 'Últimos 7 dias', count: '315', tags: ['recente'], icon: <GroupIcon />, color: '#03a9f4' },
+            { id: '3', name: 'Em Risco', desc: 'Inativos há +30 dias', count: '22584', tags: ['churn'], icon: <WarningIcon />, color: '#ff9800' },
             { id: '4', name: 'Novos Fans', desc: 'Até 5 visitas/pedidos', count: novosFans, tags: ['promessa'], icon: <FavoriteIcon />, color: '#e91e63' },
             { id: '5', name: 'Fans 10+', desc: 'Entre 6 e 10 visitas/pedidos', count: fans10Plus, tags: ['fiel'], icon: <StarIcon />, color: '#9c27b0' },
             { id: '6', name: 'Super Fans', desc: 'Mais de 10 visitas/pedidos', count: superFans, tags: ['vip'], icon: <StarIcon />, color: '#f44336' },
@@ -71,7 +71,7 @@ const Lists: React.FC<ListsProps> = () => {
                 <Button variant="contained" startIcon={<AddIcon />}>Nova Lista</Button>
             </Box>
 
-            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', lg: 'repeat(3, 1fr)' }, gap: 3 }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', lg: 'repeat(5, 1fr)' }, gap: 3 }}>
                 {segments.map((list) => (
                     <Paper key={list.id} sx={{ p: 3, borderRadius: 3, border: '1px solid', borderColor: 'divider', '&:hover': { boxShadow: 4 } }}>
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>

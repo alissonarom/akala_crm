@@ -21,6 +21,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
         { text: 'Overview', icon: <DashboardIcon />, path: '/dashboard' },
         { text: 'Clientes', icon: <PeopleIcon />, path: '/customers' },
         { text: 'Listas', icon: <ListAltIcon />, path: '/lists' },
+        { text: 'Métricas', icon: <ListAltIcon />, path: '/campaignPerformance' },
     ];
 
     return (
