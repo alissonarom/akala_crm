@@ -31,9 +31,6 @@ export interface ICustomerDocument extends ICustomer, Document {}
 // Agora, ICustomerDocument tem todos os campos de ICustomer E os métodos/props do Mongoose.
 
 const CustomerSchema: Schema = new Schema({
-    // Remova o _id daqui. O Mongoose o gerencia automaticamente,
-    // a menos que você queira atribuí-lo manualmente em um cenário específico.
-    // O Mongoose adiciona o _id por padrão (do tipo ObjectId).
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     // ... (restante do Schema) ...
@@ -45,7 +42,8 @@ const CustomerSchema: Schema = new Schema({
     last_order_date: { type: Date },
     evaluation: {
         score: { type: Number, min: 1, max: 5 },
-        comment: { type: String }
+        comment: { type: String },
+        last_rating_date: { type: Date }
     },
     male: { type: Boolean, default: false },
     origin: { type: String },
