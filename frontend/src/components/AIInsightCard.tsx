@@ -1,4 +1,5 @@
-import { Paper, Chip, Typography, Divider } from "@mui/material";
+import { Paper, Chip, Typography } from "@mui/material";
+// TODO adicionar diviser
 import { motion } from "framer-motion";
 
 
@@ -21,15 +22,15 @@ const AIInsightCard: React.FC = () => (
     />
 
     <Typography variant="h6" fontWeight="bold" gutterBottom>
-      Desempenho abaixo do potencial
+      Aguardando dados de Campanha
     </Typography>
 
-    <Typography variant="body2" sx={{ opacity: 0.9, mb: 2 }}>
+    {/* <Typography variant="body2" sx={{ opacity: 0.9, mb: 2 }}>
       A campanha gerou alto volume de visualizações, porém converteu abaixo da
       média histórica, indicando falha na oferta ou no CTA.
-    </Typography>
+    </Typography> */}
 
-    <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+    {/* <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
 
     <Typography variant="subtitle2" gutterBottom>
       Próximos passos recomendados
@@ -39,7 +40,7 @@ const AIInsightCard: React.FC = () => (
       <li>Replicar campanha apenas para Super Fans</li>
       <li>Testar oferta direta com desconto fixo</li>
       <li>Reduzir texto e CTA para pedido imediato</li>
-    </ul>
+    </ul> */}
   </Paper>
 );
 

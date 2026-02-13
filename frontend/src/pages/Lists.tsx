@@ -2,11 +2,11 @@ import React, { useMemo } from 'react';
 import { Box, Typography, Paper, Chip, Button, IconButton, Divider } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AddIcon from '@mui/icons-material/Add';
-import GroupIcon from '@mui/icons-material/Group';
+// import GroupIcon from '@mui/icons-material/Group';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import WarningIcon from '@mui/icons-material/Warning';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import StarIcon from '@mui/icons-material/Star';
+// import WarningIcon from '@mui/icons-material/Warning';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import StarIcon from '@mui/icons-material/Star';
 import { useCustomers } from '../components/CustomerContext';
 import type { Customer } from '../types';
 
@@ -55,12 +55,12 @@ const Lists: React.FC<ListsProps> = () => {
         });
 
         return [
-            { id: '1', name: 'Top Spenders', desc: 'Ticket médio > R$ 100', count: topSpenders, tags: ['lucrativo'], icon: <TrendingUpIcon />, color: '#4caf50' },
-            { id: '2', name: 'Novos Clientes', desc: 'Últimos 7 dias', count: '315', tags: ['recente'], icon: <GroupIcon />, color: '#03a9f4' },
-            { id: '3', name: 'Em Risco', desc: 'Inativos há +30 dias', count: '22584', tags: ['churn'], icon: <WarningIcon />, color: '#ff9800' },
-            { id: '4', name: 'Novos Fans', desc: 'Até 5 visitas/pedidos', count: novosFans, tags: ['promessa'], icon: <FavoriteIcon />, color: '#e91e63' },
-            { id: '5', name: 'Fans 10+', desc: 'Entre 6 e 10 visitas/pedidos', count: fans10Plus, tags: ['fiel'], icon: <StarIcon />, color: '#9c27b0' },
-            { id: '6', name: 'Super Fans', desc: 'Mais de 10 visitas/pedidos', count: superFans, tags: ['vip'], icon: <StarIcon />, color: '#f44336' },
+            { id: '1', name: 'Best Carna āKala 2026', desc: '50 top visitantes', count: topSpenders, tags: ['super fãs'], icon: <TrendingUpIcon />, color: '#9c27b0' },
+            // { id: '2', name: 'Novos Clientes', desc: 'Últimos 7 dias', count: '315', tags: ['recente'], icon: <GroupIcon />, color: '#03a9f4' },
+            // { id: '3', name: 'Em Risco', desc: 'Inativos há +30 dias', count: '22584', tags: ['churn'], icon: <WarningIcon />, color: '#ff9800' },
+            // { id: '4', name: 'Novos Fans', desc: 'Até 5 visitas/pedidos', count: novosFans, tags: ['promessa'], icon: <FavoriteIcon />, color: '#e91e63' },
+            // { id: '5', name: 'Fans 10+', desc: 'Entre 6 e 10 visitas/pedidos', count: fans10Plus, tags: ['fiel'], icon: <StarIcon />, color: '#9c27b0' },
+            // { id: '6', name: 'Super Fans', desc: 'Mais de 10 visitas/pedidos', count: superFans, tags: ['vip'], icon: <StarIcon />, color: '#f44336' },
         ];
     }, [customers]);
 
