@@ -1,6 +1,7 @@
 interface CustomerEvaluation {
   score: number;
   comment: string;
+  last_rating_date: Date;
 }
 
 export interface Customer {

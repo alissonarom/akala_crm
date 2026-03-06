@@ -55,7 +55,7 @@ const Lists: React.FC<ListsProps> = () => {
         });
 
         return [
-            { id: '1', name: 'Best Carna āKala 2026', desc: '50 top visitantes', count: topSpenders, tags: ['super fãs'], icon: <TrendingUpIcon />, color: '#9c27b0' },
+            { id: '1', name: 'Best Carna āKala 2026', desc: '50 top visitantes', count: 50, tags: ['super fãs'], icon: <TrendingUpIcon />, color: '#9c27b0' },
             // { id: '2', name: 'Novos Clientes', desc: 'Últimos 7 dias', count: '315', tags: ['recente'], icon: <GroupIcon />, color: '#03a9f4' },
             // { id: '3', name: 'Em Risco', desc: 'Inativos há +30 dias', count: '22584', tags: ['churn'], icon: <WarningIcon />, color: '#ff9800' },
             // { id: '4', name: 'Novos Fans', desc: 'Até 5 visitas/pedidos', count: novosFans, tags: ['promessa'], icon: <FavoriteIcon />, color: '#e91e63' },
